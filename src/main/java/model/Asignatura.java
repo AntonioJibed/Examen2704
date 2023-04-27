@@ -25,7 +25,13 @@ public class Asignatura implements Serializable {
 	@OneToMany(mappedBy="asignatura")
 	private List<Asignaturaspordocente> asignaturaspordocentes;
 
+
 	public Asignatura() {
+	}
+
+	@Override
+	public String toString() {
+		return denominacion;
 	}
 
 	public int getId() {
@@ -65,5 +71,7 @@ public class Asignatura implements Serializable {
 
 		return asignaturaspordocente;
 	}
+	
+	
 
 }

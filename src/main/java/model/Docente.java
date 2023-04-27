@@ -39,6 +39,12 @@ public class Docente implements Serializable {
 	public String getNombreCompleto() {
 		return this.nombreCompleto;
 	}
+	
+
+	@Override
+	public String toString() {
+		return nombreCompleto;
+	}
 
 	public void setNombreCompleto(String nombreCompleto) {
 		this.nombreCompleto = nombreCompleto;
