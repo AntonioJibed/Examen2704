@@ -9,20 +9,19 @@ import javax.persistence.Query;
 
 import model.Asignatura;
 
-
 public class ControladorAsignatura {
-	
-	private static EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("profesoresymaterias");
 
+	private static EntityManagerFactory entityManagerFactory = Persistence
+			.createEntityManagerFactory("profesoresymaterias");
 
-	public static List<Asignatura> findAll(){
+	public static List<Asignatura> findAll() {
 		EntityManager em = entityManagerFactory.createEntityManager();
 		Query q = em.createNativeQuery("select * from asignatura", Asignatura.class);
-		List<Asignatura> lista = (List<Asignatura>)q.getResultList();
+		List<Asignatura> lista = (List<Asignatura>) q.getResultList();
 		em.close();
 		return lista;
 	}
-	
+
 	public static void update(Asignatura a) {
 		EntityManager em = entityManagerFactory.createEntityManager();
 		em.getTransaction().begin();
@@ -31,7 +30,7 @@ public class ControladorAsignatura {
 		em.getTransaction().commit();
 		em.close();
 	}
-	
+
 	public static void insert(Asignatura a) {
 		EntityManager em = entityManagerFactory.createEntityManager();
 		em.getTransaction().begin();

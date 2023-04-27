@@ -4,27 +4,25 @@ import java.io.Serializable;
 import javax.persistence.*;
 import java.util.List;
 
-
 /**
  * The persistent class for the asignatura database table.
  * 
  */
 @Entity
-@Table(name="asignatura")
-@NamedQuery(name="Asignatura.findAll", query="SELECT a FROM Asignatura a")
+@Table(name = "asignatura")
+@NamedQuery(name = "Asignatura.findAll", query = "SELECT a FROM Asignatura a")
 public class Asignatura implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 
 	private String denominacion;
 
-	//bi-directional many-to-one association to Asignaturaspordocente
-	@OneToMany(mappedBy="asignatura")
+	// bi-directional many-to-one association to Asignaturaspordocente
+	@OneToMany(mappedBy = "asignatura")
 	private List<Asignaturaspordocente> asignaturaspordocentes;
-
 
 	public Asignatura() {
 	}
@@ -71,7 +69,5 @@ public class Asignatura implements Serializable {
 
 		return asignaturaspordocente;
 	}
-	
-	
 
 }

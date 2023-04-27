@@ -10,7 +10,6 @@ import javax.swing.border.EmptyBorder;
 
 public class Principal extends JFrame {
 
-
 	public Principal() {
 
 		this.setExtendedState(JFrame.MAXIMIZED_BOTH);
@@ -18,7 +17,7 @@ public class Principal extends JFrame {
 		JTabbedPane tabedPane = new JTabbedPane();
 
 		tabedPane.add("Primer Panel", new Ventana());
-		
+
 		this.setMinimumSize(new Dimension(800, 600));
 
 		this.setContentPane(tabedPane);
@@ -31,6 +30,5 @@ public class Principal extends JFrame {
 		Principal v = new Principal();
 		v.setVisible(true);
 	}
-
 
 }
